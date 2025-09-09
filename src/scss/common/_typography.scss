@@ -1,0 +1,56 @@
+@use './presets/' as *;
+@use '../mixins/' as *;
+
+* {
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size;
+  font-family: $font-primary;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $text-title-weight;
+  line-height: $line-height-sm;
+  margin: 0;
+}
+
+h1 {
+  font-size: $text-h1;
+
+  @include tablet {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: $text-h2;
+
+  @include tablet {
+    font-size: 1.8rem;
+  }
+}
+
+h3 {
+  font-size: $text-h3;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+}
+
+p {
+  line-height: $line-height-body;
+  font-weight: $text-body-weight;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text-primary;
+}

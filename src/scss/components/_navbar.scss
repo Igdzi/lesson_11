@@ -1,0 +1,97 @@
+@use './presets/' as *;
+@use '../mixins/' as *;
+
+.navbar {
+  margin-bottom: 10.1rem;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.1rem;
+  }
+
+  &__link {
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+  }
+
+  &__link--active {
+    color: $color-background-accent;
+  }
+
+  &__btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  &__btn-row {
+    display: block;
+    height: 0.2rem;
+    background: $color-background-accent;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  @include small-tablet {
+    gap: 1.5rem;
+    justify-content: space-evenly;
+
+    &__list {
+      gap: 1.5rem;
+      justify-content: space-evenly;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 4rem;
+
+    &__btn {
+      display: flex;
+      z-index: 1001;
+
+      &.active {
+        .navbar__btn-row:nth-child(1) {
+          transform: rotate(45deg) translateY(0.5rem);
+        }
+
+        .navbar__btn-row:nth-child(2) {
+          opacity: 0;
+        }
+
+        .navbar__btn-row:nth-child(3) {
+          transform: rotate(-45deg) translateY(-0.5rem);
+        }
+      }
+    }
+
+    &__list {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: $color-background-accent;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 4rem;
+      gap: 3rem;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    &__link {
+      color: $color-background-primary;
+    }
+
+    &__list.active {
+      right: 0;
+    }
+  }
+
+}

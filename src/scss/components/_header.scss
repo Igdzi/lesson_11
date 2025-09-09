@@ -1,0 +1,19 @@
+@use './presets/' as *;
+@use '../mixins/' as *;
+
+.header {
+  padding-top: 5rem;
+  padding-bottom: 8.8rem;
+  background-color: $color-background-primary;
+
+  @include small-tablet {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @include tablet {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+
+}

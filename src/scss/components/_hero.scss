@@ -1,0 +1,64 @@
+@use './presets/' as *;
+@use '../mixins/' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 33.7rem;
+
+  &__title {
+    margin-bottom: 2.5rem;
+    max-width: 33.7rem;
+  }
+
+  &__text {
+    margin-bottom: 3.3rem;
+    color: $color-text-body;
+  }
+
+  &__button {
+    all: unset;
+    cursor: pointer;
+    background-color: $color-background-accent;
+    color: $color-text-light;
+    letter-spacing: $letter-spacing;
+    padding: 1.5rem 3.3rem;
+    text-transform: uppercase;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    &__button {
+      padding: 1.2rem 3.1rem;
+    }
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include small-tablet {
+    align-items: center;
+    margin: 0 auto;
+
+    &__text {
+      display: flex;
+      text-align: center;
+    }
+
+    &__button {
+      padding: 1.2rem 4rem;
+    }
+  }
+
+  @include mobile {
+    &__button {
+      padding: 1rem 0;
+      width: 100%;
+    }
+  }
+
+}

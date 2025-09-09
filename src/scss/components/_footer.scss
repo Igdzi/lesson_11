@@ -1,0 +1,42 @@
+@use './presets/' as *;
+@use '../mixins/' as *;
+
+.footer {
+  display: flex;
+  background-color: $color-background-accent;
+  padding: 3.1rem 0;
+  color: $color-text-light;
+
+  &__name {
+    margin: 0 0 0.8rem 0;
+  }
+
+  @include small-tablet {
+    padding: 2rem 0;
+
+    &__name {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__copyright {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @include mobile {
+    padding: 2rem 0;
+
+    &__name {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__copyright {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+}
